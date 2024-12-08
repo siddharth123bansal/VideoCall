@@ -37,11 +37,8 @@ public class MainActivity extends AppCompatActivity {
         try {
             JitsiMeetConferenceOptions defaultOptions=new JitsiMeetConferenceOptions.Builder()
                     .setServerURL(new URL("https://meet.jit.si"))
-//                    .setWelcomePageEnabled(false)
-                    .setAudioMuted(false)
-                    .setVideoMuted(false)
-                    .setAudioOnly(false)
-            .build();
+                    .setFeatureFlag("welcomepage.enabled", false)
+                    .build();
             JitsiMeet.setDefaultConferenceOptions(defaultOptions);
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
@@ -50,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         joinBtn.setOnClickListener(v -> {
             JitsiMeetConferenceOptions defaultOptions=new JitsiMeetConferenceOptions.Builder()
                 .setRoom(serverCode.getText().toString())
+                    .setFeatureFlag("welcomepage.enabled", false)
                     .build();
             JitsiMeetActivity.launch(MainActivity.this,defaultOptions);
 
