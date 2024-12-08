@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
+    android:backgroundTint="@color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
@@ -36,29 +37,31 @@
 
         <Button
             android:id="@+id/joinBtn"
-            style="?android:attr/buttonBarButtonStyle"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_weight="1"
-            android:background="@color/blue"
-            android:text="Join"
-            android:textColor="@color/white"
-            android:layout_marginEnd="5dp"
             android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="#2196F3"
+            android:text="Join"
+            android:padding="15dp"
+            android:textColor="@color/white"
             app:cornerRadius="15dp" />
 
         <Button
             android:id="@+id/shareBtn"
-            style="?android:attr/buttonBarButtonStyle"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:background="@color/red"
-            android:textColor="@color/white"
-
             android:layout_weight="1"
-            android:text="Share" />
+            app:cornerRadius="15dp"
+            android:padding="15dp"
+            android:backgroundTint="#FF0000"
+            android:text="Share"
+            android:textColor="@color/white" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
